@@ -104,8 +104,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Screenshots 📸
 
-![Dashboard Screenshot](screenshots/dashboard.png)
-![Add Expense Screenshot](screenshots/add-expense.png)
+![Spring Boot Screenshot](https://github.com/user-attachments/assets/43a4ad4e-ca96-4e0a-b21a-9076a9137013)
+![Expense Screenshot](https://github.com/user-attachments/assets/f4a1d830-8f13-43a3-b2d6-eed74596b917)
 
 ---
 
@@ -114,4 +114,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 If you have any questions or feedback, feel free to reach out:
 
 - GitHub: [@ramezian1](https://github.com/ramezian1)
+
 
