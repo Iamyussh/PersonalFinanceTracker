@@ -109,10 +109,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-#### Contact 📬
+## Contact 📬
 
 If you have any questions or feedback, feel free to reach out:
 
 - GitHub: [@ramezian1](https://github.com/ramezian1)
+- Email: ramezian94@gmail.com
+
+--All work contributed and done by Robert Mezian--
 
 
