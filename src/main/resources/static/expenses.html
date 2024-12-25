@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses - Personal Finance Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="expenses.html">Expenses</a></li>
+            </ul>
+        </nav>
+        <h1>Expenses</h1>
+    </header>
+    <main class="container">
+        <section id="expenses-list">
+            <h2 class="my-second-header">Your Expenses</h2>
+            <table id="expensesTable">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Expenses will be dynamically inserted here -->
+                </tbody>
+            </table>
+            
+            <!-- Total Expenses for each category -->
+            <div id="category-totals">
+                <h3>Category Totals:</h3>
+                <ul>
+                    <li id="food-total">Food: $0.00</li>
+                    <li id="transport-total">Transport: $0.00</li>
+                    <li id="entertainment-total">Entertainment: $0.00</li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </div>
+
+            <!-- Total Expenses for all categories -->
+            <div id="total-expenses" class="my-second-header">
+                Total Expenses: $0.00
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        &copy; 2024 Personal Finance Tracker
+    </footer>
+    <script src="/js/app.js"></script>
+</body>
+</html>
