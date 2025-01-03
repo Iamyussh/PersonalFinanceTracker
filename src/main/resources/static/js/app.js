@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const expenseForm = document.getElementById('expenseForm');
     let totalExpenses = 0;
-    let categoryTotals = {
+    const categoryTotals = {
         food: 0,
-        transport: 0,
-        entertainment: 0,
+        bills: 0,
+        transportation: 0,
+        subscriptions: 0,
+        shopping: 0,
         // Add other categories as needed
     };
 
@@ -15,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const description = document.getElementById('description').value;
             const amount = parseFloat(document.getElementById('amount').value);
             const date = document.getElementById('date').value;
-            const category = document.getElementById('category').value;
+            const category = document.getElementById('category').value.toLowerCase();
 
             const expense = {
+                id: Date.now(), // Add a unique ID to each expense
                 description: description,
                 amount: amount,
                 date: date,
@@ -32,63 +35,55 @@ document.addEventListener('DOMContentLoaded', function () {
     function addExpense(expense) {
         const table = document.getElementById('expensesTable').getElementsByTagName('tbody')[0];
 
-        const newRow = table.insertRow();
-        const descriptionCell = newRow.insertCell(0);
-        const amountCell = newRow.insertCell(1);
-        const dateCell = newRow.insertCell(2);
-        const categoryCell = newRow.insertCell(3);
-        const deleteCell = newRow.insertCell(4); // Cell for the delete button
-
-        descriptionCell.textContent = expense.description;
-        amountCell.textContent = expense.amount.toFixed(2);
-        dateCell.textContent = expense.date;
-        categoryCell.textContent = expense.category;
-
-        // Create the delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('delete-btn');
-        deleteButton.addEventListener('click', function () {
-            deleteExpense(expense, newRow);
-        });
-        deleteCell.appendChild(deleteButton);
-
-        totalExpenses += expense.amount;
-        categoryTotals[expense.category] += expense.amount;
-
-        updateTotalExpenses();
-        updateCategoryTotals();
-    }
-
-    function updateTotalExpenses() {
-        const totalExpensesElement = document.getElementById('total-expenses');
-        totalExpensesElement.textContent = `Total Expenses: $${totalExpenses.toFixed(2)}`;
-    }
-
-    function updateCategoryTotals() {
-        for (const category in categoryTotals) {
-            const categoryTotalElement = document.getElementById(`${category}-total`);
-            if (categoryTotalElement) {
-                categoryTotalElement.textContent = `${capitalizeFirstLetter(category)}: $${categoryTotals[category].toFixed(2)}`;
-            }
+        // Update category totals
+        if (categoryTotals.hasOwnProperty(expense.category)) {
+            categoryTotals[expense.category] += expense.amount;
+        } else {
+            categoryTotals[expense.category] = expense.amount;
         }
+
+        // Update total expenses
+        totalExpenses += expense.amount;
+
+        // Display updated totals
+        displayCategoryTotals();
+        displayTotalExpenses();
+
+        // Add the expense to the table
+        const newRow = table.insertRow();
+        newRow.innerHTML = `
+            <td>${expense.description}</td>
+            <td>${expense.amount.toFixed(2)}</td>
+            <td>${formatDate(expense.date)}</td>
+            <td>${expense.category}</td>
+            <td><button class="delete-btn" data-id="${expense.id}">Delete</button></td>
+        `;
+
+        // Add event listener to the delete button
+        newRow.querySelector('.delete-btn').addEventListener('click', function () {
+            deleteExpense(expense.id, newRow);
+        });
     }
 
-    function deleteExpense(expense, row) {
+    function deleteExpense(expenseId, row) {
         // Remove the expense from localStorage
         let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
-        expenses = expenses.filter(e => e !== expense);
+        const expense = expenses.find(e => e.id === expenseId);
+        expenses = expenses.filter(e => e.id !== expenseId);
         localStorage.setItem('expenses', JSON.stringify(expenses));
 
         // Remove the row from the table
         row.remove();
 
-        // Update the totals after deletion
-        totalExpenses -= expense.amount;
-        categoryTotals[expense.category] -= expense.amount;
+        // Update the total expenses and category totals
+        if (expense) {
+            categoryTotals[expense.category] -= expense.amount;
+            totalExpenses -= expense.amount;
+        }
 
-        updateTotalExpenses();
-        updateCategoryTotals();
+        // Display updated totals
+        displayCategoryTotals();
+        displayTotalExpenses();
     }
 
     function saveExpense(expense) {
@@ -104,7 +99,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadExpenses();
 
+    function displayCategoryTotals() {
+        for (const category in categoryTotals) {
+            if (categoryTotals.hasOwnProperty(category)) {
+                const categoryTotalElement = document.getElementById(`${category}-total`);
+                if (categoryTotalElement) {
+                    categoryTotalElement.textContent = `${capitalizeFirstLetter(category)}: $${categoryTotals[category].toFixed(2)}`;
+                }
+            }
+        }
+    }
+
+    function displayTotalExpenses() {
+        const totalExpensesElement = document.getElementById('total-expenses');
+        totalExpensesElement.textContent = `Total Expenses: $${totalExpenses.toFixed(2)}`;
+    }
+
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const year = date.getFullYear();
+        return `${month}-${day}-${year}`;
     }
 });

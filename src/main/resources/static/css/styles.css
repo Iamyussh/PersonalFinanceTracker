@@ -82,7 +82,7 @@ header {
 }
 
 .delete-btn {
-    background-color: red;
+    background-color: rgb(163, 23, 23);
     color: white;
     border: none;
     padding: 5px 10px;
