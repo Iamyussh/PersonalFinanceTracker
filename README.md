@@ -86,10 +86,9 @@ Before you start, make sure you have the following installed:
 5. Open a Pull Request.
 
 ---
+## Screenshots 📸
 
-## License 📝
-
-Distributed under the MIT License. See `LICENSE` for more information.
+![Screenshot 2025-03-14 020537](https://github.com/user-attachments/assets/dfc0a19b-c381-4d45-9118-de5b3718f12b)
 
 ---
 
@@ -102,10 +101,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
-## Screenshots 📸
+## License 📝
 
-![Screenshot 2025-03-14 020537](https://github.com/user-attachments/assets/dfc0a19b-c381-4d45-9118-de5b3718f12b)
-
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
@@ -114,7 +112,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 If you have any questions or feedback, feel free to reach out:
 
 - GitHub: [@ramezian1](https://github.com/ramezian1)
-- Email: ramezian94@gmail.com
+- Email: robert_mezian@outlook.com
+- Website: https://www.robertmezian.com/
 
 --All work contributed and done by Robert Mezian--
 
