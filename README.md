@@ -104,8 +104,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Screenshots 📸
 
-![Spring Boot Screenshot](https://github.com/user-attachments/assets/43a4ad4e-ca96-4e0a-b21a-9076a9137013)
-![Expense Screenshot](https://github.com/user-attachments/assets/f4a1d830-8f13-43a3-b2d6-eed74596b917)
+![Screenshot 2025-03-14 020537](https://github.com/user-attachments/assets/dfc0a19b-c381-4d45-9118-de5b3718f12b)
+
 
 ---
 
