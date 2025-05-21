@@ -1,6 +1,6 @@
 # Personal Finance Tracker 💰
 
-By Robert Mezian
+By Ayush Samanta
 
 A simple and intuitive Personal Finance Tracker web application built with **Java Spring Boot** for the backend and **HTML/CSS** for the frontend as well as Javascript. This application allows users to track their income, expenses, and manage their budgets, providing an easy-to-use interface to help individuals better manage their finances.
 
@@ -41,7 +41,7 @@ Before you start, make sure you have the following installed:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/ramezian1/personal-finance-tracker.git
+    https://github.com/Iamyussh/PersonalFinanceTracker.git
     ```
 
 2. Navigate to the project directory:
@@ -75,7 +75,7 @@ Before you start, make sure you have the following installed:
 - **Transaction List**: A list of all income and expense entries, sortable by date or category.
 - **View Total Expenses**: See total expenses spent to better track which category user is spending most on.
 
----
+
 
 ## Contributing 🤝
 
@@ -90,30 +90,16 @@ Before you start, make sure you have the following installed:
 
 ![Screenshot 2025-03-14 020537](https://github.com/user-attachments/assets/dfc0a19b-c381-4d45-9118-de5b3718f12b)
 
----
 
-## Acknowledgments 🙏
 
-- [Spring Boot](https://spring.io/projects/spring-boot) - Backend framework used to create the application.
-- [HTML/CSS](https://www.w3.org/Style/CSS/) - For building a responsive and user-friendly frontend.
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - For dynamic client-side interactions, like form validation and real-time updates.
-- [H2 Database](https://www.h2database.com/) - Lightweight, in-memory database used for development.
-
----
-
-## License 📝
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
 
 ## Contact 📬
 
 If you have any questions or feedback, feel free to reach out:
 
-- GitHub: [@ramezian1](https://github.com/ramezian1)
-- Email: robert_mezian@outlook.com
-- Website: https://www.robertmezian.com/
+- GitHub: [@Iamyussh](https://github.com/Iamyussh)
+- Email: ayushsamanta1475@gmail.com
+- Website: https://dev-portfolio-lac-three.vercel.app/
 
 --All work contributed and done by Robert Mezian--
 
